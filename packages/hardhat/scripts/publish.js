@@ -67,7 +67,7 @@ function publishContract(contractName) {
     return true;
   } catch (e) {
     if(e.toString().indexOf("no such file or directory")>=0){
-      console.log(chalk.yellow(" ⚠️  Can't publish "+contractName+" yet (make sure it getting deployed)."))
+      console.log(chalk.yellow(" ⚠️  Can't publish "+contractName+" yet (make sure it getting deployed). Create directory ../subgraph/abis if it doesn't exist."))
     }else{
       console.log(e);
       return false;

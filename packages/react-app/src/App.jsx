@@ -49,28 +49,20 @@ console.log("📦 Assets: ",assets)
 
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS['mumbai']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS['localhost']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet,mumbai)
 
 // 😬 Sorry for all the console logging
-const DEBUG = true
+const DEBUG = false
 
 //EXAMPLE STARTING JSON:
 const STARTING_JSON = {
-  "description": "It's actually a bison?",
-  "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-  "image": "https://austingriffith.com/images/paintings/buffalo.jpg",
-  "name": "Buffalo",
-  "attributes": [
-     {
-       "trait_type": "BackgroundColor",
-       "value": "green"
-     },
-     {
-       "trait_type": "Eyes",
-       "value": "googly"
-     }
-  ]
-}
+    "name": "Let Go",
+    "description": "Mou5 in da hause",
+    "external_url": "https://ever.fm/project/d2868467-a73b-4546-9e58-c8980f7d340b",
+    "image": "https://ever.fm/users/assets/ckuyxcmp7000c4us65dit5h34-rendition_63d73494-a5df-4125-b228-94d9172d4a45.png",
+    "audio":"https://ever.fm/users/assets/ckuyxckwk000b4us69utv4f4x-rendition_63d73494-a5df-4125-b228-94d9172d4a45.wav.mp3"
+  }
+
 
 //helper function to "Get" from IPFS
 // you usually go content.toString() after this...
@@ -338,15 +330,12 @@ function App(props) {
             blockExplorer={blockExplorer}
             minimized={true}
           />
-          <div>
-          str:{loadedAssets[a].strength}
-          </div>
         </div>
       )
     }
 
     galleryList.push(
-      <Card style={{width:200}} key={loadedAssets[a].name}
+      <Card style={{width:360}} key={loadedAssets[a].name}
         actions={cardActions}
         title={(
           <div>
@@ -358,6 +347,9 @@ function App(props) {
         <div style={{opacity:0.77}}>
           {loadedAssets[a].description}
         </div>
+        <audio controls>
+          <source src={loadedAssets[a].audio} type="audio/mpeg" />
+        </audio>
       </Card>
     )
   }
@@ -376,7 +368,7 @@ function App(props) {
             <Link onClick={()=>{setRoute("/")}} to="/">Gallery</Link>
           </Menu.Item>
           <Menu.Item key="/yourcollectibles">
-            <Link onClick={()=>{setRoute("/yourcollectibles")}} to="/yourcollectibles">YourCollectibles</Link>
+            <Link onClick={()=>{setRoute("/yourcollectibles")}} to="/yourcollectibles">Your EVERs</Link>
           </Menu.Item>
           <Menu.Item key="/transfers">
             <Link onClick={()=>{setRoute("/transfers")}} to="/transfers">Transfers</Link>
@@ -402,7 +394,7 @@ function App(props) {
 
             <div style={{ maxWidth:820, margin: "auto", marginTop:32, paddingBottom:256 }}>
               <StackGrid
-                columnWidth={200}
+                columnWidth={360}
                 gutterWidth={16}
                 gutterHeight={16}
               >
@@ -429,9 +421,9 @@ function App(props) {
                       )}>
                         <div><img src={item.image} style={{maxWidth:150}} /></div>
                         <div>{item.description}</div>
-                        <div>
-                        strength: {item.strength}
-                        </div>
+                        <audio controls>
+                          <source src={item.audio} type="audio/mpeg" />
+                        </audio>
                       </Card>
 
                       <div>

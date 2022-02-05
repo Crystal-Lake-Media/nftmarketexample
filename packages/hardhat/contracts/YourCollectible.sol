@@ -24,7 +24,7 @@ contract YourCollectible is ERC721, VRFConsumerBase {
     VRFConsumerBase(
       0x8C7382F9D8f56b33781fE506E897a4F1e2d17255, // VRF Coordinator
       0x326C977E6efc84E512bB9C30f76E30c160eD06FB  // LINK Token
-    )  ERC721("YourCollectible", "YCB") {
+    )  ERC721("EverFM", "EVER") {
     _setBaseURI("https://ipfs.io/ipfs/");
     for(uint256 i=0;i<assetsForSale.length;i++){
       forSale[assetsForSale[i]] = true;
