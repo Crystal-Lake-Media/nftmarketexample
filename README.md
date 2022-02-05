@@ -61,8 +61,7 @@ yarn deploy
 
 Your artwork from `artwork.json` (if uploaded and deployed correctly) should show a gallery of possible NFTS to mint:
 
-![image](https://user-images.githubusercontent.com/2653167/110538535-5fe87980-80e1-11eb-83aa-fe2b53f9c277.png)
-
+![image](./gallery.jpg)
 
 💦 Use the faucet wallet icon in the bottom left of the frontend to give your address **$1000** in testnet ETH.
 
@@ -74,13 +73,11 @@ Your artwork from `artwork.json` (if uploaded and deployed correctly) should sho
 
 > First call `getRandomNumber()` from the `debug contracts` tab:
 
-![image](https://user-images.githubusercontent.com/2653167/111365232-d93f1980-8657-11eb-933f-e4e408e2c3ab.png)
+
 
 > Wait for the `randomResult` to get set:
 
-![image](https://user-images.githubusercontent.com/2653167/111365297-f247ca80-8657-11eb-9aed-d3867e489996.png)
 
 
 > Finally, mint from the `gallery` tab and your NFT will have a `tokenStrength`:
 
-![image](https://user-images.githubusercontent.com/2653167/111365450-1e634b80-8658-11eb-938c-a2523586dfd4.png)
