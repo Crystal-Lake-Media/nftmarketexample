@@ -21,7 +21,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "localhost";//was mumbai
+const defaultNetwork = "avalanche_test";//was mumbai
 
 function mnemonic() {
   try {
@@ -98,6 +98,13 @@ module.exports = {
     matic: {
       url: 'https://rpc-mainnet.maticvigil.com/',
       gasPrice: 1000000000,
+      accounts: {
+        mnemonic: mnemonic(),
+      },
+    },
+    avalanche_test: {
+      url: 'https://api.avax-test.network/ext/bc/C/rpc',
+      gasPrice: 25000000000,
       accounts: {
         mnemonic: mnemonic(),
       },

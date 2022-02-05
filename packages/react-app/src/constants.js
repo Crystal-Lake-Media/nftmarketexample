@@ -98,5 +98,15 @@ export const NETWORKS = {
         rpcUrl: "https://rpc-mumbai.maticvigil.com",
         faucet: "https://faucet.matic.network/",
         blockExplorer: "https://mumbai-explorer.matic.today/",
+    },
+    avalanche_test: {
+        name: "avalanche_test",
+        color: '#FF0000',
+        chainId: 43113,
+        price: 1,
+        gasPrice:1000000000,
+        rpcUrl: "https://api.avax-test.network/ext/bc/C/rpc",
+        faucet: "https://faucet.avax-test.network/",
+        blockExplorer: "https://testnet.snowtrace.io/",
     }
 }

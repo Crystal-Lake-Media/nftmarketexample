@@ -49,7 +49,7 @@ console.log("📦 Assets: ",assets)
 
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS['localhost']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet,mumbai)
+const targetNetwork = NETWORKS['avalanche_test']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet,mumbai)
 
 // 😬 Sorry for all the console logging
 const DEBUG = false
