@@ -100,7 +100,7 @@ export const NETWORKS = {
         blockExplorer: "https://mumbai-explorer.matic.today/",
     },
     avalanche_test: {
-        name: "avalanche_test",
+        name: "avax-test",
         color: '#FF0000',
         chainId: 43113,
         price: 1,

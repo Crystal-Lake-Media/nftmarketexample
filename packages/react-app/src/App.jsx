@@ -52,7 +52,7 @@ console.log("📦 Assets: ",assets)
 const targetNetwork = NETWORKS['avalanche_test']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet,mumbai)
 
 // 😬 Sorry for all the console logging
-const DEBUG = false
+const DEBUG = true
 
 //EXAMPLE STARTING JSON:
 const STARTING_JSON = {
@@ -111,7 +111,13 @@ function App(props) {
   const price = useExchangePrice(targetNetwork,mainnetProvider);
 
   /* 🔥 This hook will get the price of Gas from ⛽️ EtherGasStation */
-  const gasPrice = useGasPrice(targetNetwork,"fast");
+  let gasPrice = useGasPrice(targetNetwork,"fast");
+
+//  if(!gasPrice){
+    gasPrice = 25000000000;
+  //}
+  console.log("______________gasPrice: " + gasPrice);
+
   // Use your injected provider from 🦊 Metamask or if you don't have it then instantly generate a 🔥 burner wallet.
   const userProvider = useUserProvider(injectedProvider, localProvider);
   const address = useUserAddress(userProvider);

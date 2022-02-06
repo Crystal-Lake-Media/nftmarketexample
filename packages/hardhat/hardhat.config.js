@@ -104,7 +104,6 @@ module.exports = {
     },
     avalanche_test: {
       url: 'https://api.avax-test.network/ext/bc/C/rpc',
-      gasPrice: 25000000000,
       accounts: {
         mnemonic: mnemonic(),
       },

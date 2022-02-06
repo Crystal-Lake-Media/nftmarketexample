@@ -37,6 +37,11 @@ export default function Transactor(provider, gasPrice, etherscan) {
         etherscanTxUrl = "https://blockscout.com/poa/xdai/tx/";
       }
 
+
+      console.log("TX network", network);
+
+
+
       try {
         let result;
         if (tx instanceof Promise) {
@@ -44,8 +49,9 @@ export default function Transactor(provider, gasPrice, etherscan) {
           result = await tx;
         } else {
           if (!tx.gasPrice) {
-            tx.gasPrice = gasPrice || parseUnits("4.1", "gwei");
+           // tx.gasPrice = gasPrice || parseUnits("4.1", "gwei");
           }
+          tx.gasPrice = null;
           if (!tx.gasLimit) {
             tx.gasLimit = hexlify(120000);
           }
